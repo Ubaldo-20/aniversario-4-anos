@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: aniversario-4-anos
+    name: mira-esto-mi-mocito
     env: docker
     plan: free
     envVars:
