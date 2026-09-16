@@ -1,0 +1,13 @@
+<section class="section-shell gallery-section reveal-section">
+  <div class="section-kicker"><span>&#10022;</span> Nuestro álbum <span>&#10022;</span></div>
+  <h2>Nuestras salidas <em>&amp; salidas a comer</em></h2>
+  <p class="section-intro">Doce pedacitos de la historia que seguimos escribiendo juntos.</p>
+  <div class="photo-grid">
+    <% photos.each_with_index do |photo, index| %>
+      <figure class="photo-card photo-card-<%= index + 1 %>">
+        <img src="/<%= photo[:path] %>" alt="Recuerdo de nuestra salida <%= index + 1 %>" loading="<%= index.zero? ? 'eager' : 'lazy' %>">
+        <figcaption><span>0<%= index + 1 %></span><%= photo[:caption] %></figcaption>
+      </figure>
+    <% end %>
+  </div>
+</section>

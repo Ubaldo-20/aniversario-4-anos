@@ -8,3 +8,98 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+	--ink: #4e2631;
+	--wine: #8e3e50;
+	--rose: #c86b78;
+	--blush: #f9e5df;
+	--cream: #fffaf3;
+	--gold: #c69448;
+	--paper: #fff8e9;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--cream); font-family: "Trebuchet MS", sans-serif; }
+body.welcome-locked { overflow: hidden; }
+button { font: inherit; cursor: pointer; }
+.romance-page { min-height: 100vh; overflow: hidden; background: radial-gradient(circle at 10% 15%, #fce7dc 0, transparent 27rem), radial-gradient(circle at 90% 72%, #f7ddcf 0, transparent 28rem), var(--cream); }
+.welcome-screen { min-height: 100vh; display: grid; place-items: center; align-content: center; padding: 2rem; text-align: center; background: linear-gradient(145deg, #fffaf2 5%, #fae5df 55%, #f5d5d0); transition: opacity .8s ease, transform .8s ease; position: relative; }
+.welcome-screen::before, .welcome-screen::after { content: ""; position: absolute; width: 10rem; height: 10rem; border: 1px solid rgba(198, 148, 72, .28); transform: rotate(45deg); }
+.welcome-screen::before { top: -5rem; left: -5rem; }
+.welcome-screen::after { right: -5rem; bottom: -5rem; }
+.welcome-screen.is-closing { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.welcome-screen[hidden] { display: none; }
+.welcome-stars, .section-kicker, .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .22em; font-size: .68rem; font-weight: bold; }
+.welcome-stars { margin-bottom: 2.4rem; animation: float 3s ease-in-out infinite; }
+.envelope { width: 5.8rem; height: 4.3rem; display: grid; place-items: center; margin: 0 auto 2rem; border: 1px solid var(--gold); background: rgba(255, 250, 243, .6); transform: rotate(-3deg); box-shadow: 0 1.2rem 2.5rem rgba(113, 55, 59, .12); position: relative; }
+.envelope::before { content: ""; position: absolute; inset: 0; border-top: 1px solid var(--gold); transform: skewY(31deg); transform-origin: top left; }
+.envelope span { color: var(--wine); font-size: 1.65rem; animation: pulse 1.6s ease-in-out infinite; }
+.welcome-screen h1, .invitation-section h2, .counter-section h2, .gallery-section h2 { margin: .8rem 0 1rem; font: 400 clamp(2.35rem, 8vw, 5.3rem)/.98 Georgia, serif; letter-spacing: -.02em; }
+.welcome-screen h1 em, h2 em { color: var(--wine); font-style: italic; }
+.welcome-note { color: #80505a; margin: 0 auto 2rem; font-size: .95rem; }
+.unlock-button, .yes-button { border: 0; border-radius: 999px; background: var(--wine); color: #fff9f1; padding: .9rem 1.4rem; box-shadow: 0 .8rem 1.6rem rgba(142, 62, 80, .2); transition: transform .25s, box-shadow .25s; }
+.unlock-button:hover, .yes-button:hover { transform: translateY(-3px); box-shadow: 0 1rem 2rem rgba(142, 62, 80, .3); }
+.romance-content { opacity: 0; transition: opacity 1s ease .35s; }
+.romance-content.is-visible { opacity: 1; }
+.section-shell { max-width: 70rem; margin: 0 auto; padding: 7rem 1.25rem; text-align: center; }
+.letter-section { padding-top: 6rem; }
+.love-letter { max-width: 45rem; margin: 2rem auto 0; padding: 3.5rem clamp(1.5rem, 7vw, 5rem) 3rem; text-align: left; background: var(--paper); border: 1px solid #edd8b8; box-shadow: 0 1.5rem 4rem rgba(111, 55, 46, .1); position: relative; transform: rotate(-.5deg); }
+.love-letter::before { content: ""; position: absolute; inset: .7rem; border: 1px solid rgba(198, 148, 72, .35); pointer-events: none; }
+.love-letter > * { position: relative; }
+.letter-stamp { position: absolute; top: 1.5rem; right: 1.6rem; width: 3.5rem; height: 3.5rem; display: grid; place-items: center; color: var(--wine); border: 1px solid var(--rose); border-radius: 50%; font: 1.35rem Georgia, serif; line-height: .8; }
+.letter-stamp small { font: .5rem "Trebuchet MS", sans-serif; text-transform: uppercase; letter-spacing: .1em; }
+.letter-greeting { color: var(--rose); font: italic 1rem Georgia, serif; }
+.love-letter h2 { margin: .7rem 0 1.5rem; color: var(--wine); font: 400 2.3rem Georgia, serif; }
+.love-letter p { color: #69454a; line-height: 1.85; font-size: .96rem; }
+.love-letter p + p { margin-top: 1.2rem; }
+.letter-signoff { margin-top: 2rem; color: var(--wine) !important; font-family: Georgia, serif; }
+.letter-signoff strong { letter-spacing: .18em; font-size: .8rem; }
+.counter-section { background: rgba(255, 247, 239, .66); max-width: none; }
+.counter-section > * { max-width: 70rem; margin-left: auto; margin-right: auto; }
+.counter-section h2, .gallery-section h2 { font-size: clamp(2.1rem, 6vw, 4.3rem); }
+.countdown { display: flex; justify-content: center; align-items: center; gap: clamp(.4rem, 3vw, 1.6rem); margin: 2.5rem 0 1.5rem; }
+.count-unit { min-width: 4.2rem; display: grid; gap: .4rem; }
+.count-unit strong { color: var(--wine); font: 400 clamp(1.8rem, 5vw, 3.3rem) Georgia, serif; }
+.count-unit span { color: var(--gold); text-transform: uppercase; letter-spacing: .09em; font-size: .58rem; }
+.count-divider { color: var(--rose); font: 2rem Georgia, serif; padding-bottom: 1.1rem; }
+.counter-note, .section-intro { color: #88616a; font-size: .9rem; }
+.gallery-section { padding-bottom: 8rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin-top: 2.5rem; text-align: left; }
+.photo-card { margin: 0; background: #fff; padding: .45rem .45rem .8rem; box-shadow: 0 .7rem 1.8rem rgba(90, 37, 44, .12); transition: transform .3s ease; }
+.photo-card:hover { transform: translateY(-.4rem) rotate(1deg); }
+.photo-card:nth-child(even) { transform: rotate(1.5deg); }
+.photo-card:nth-child(even):hover { transform: translateY(-.4rem) rotate(2deg); }
+.photo-card img { display: block; width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; filter: saturate(.9); }
+.photo-card figcaption { display: grid; grid-template-columns: auto 1fr; gap: .55rem; padding: .65rem .2rem 0; color: #754951; font: .76rem/1.25 Georgia, serif; }
+.photo-card figcaption span { color: var(--gold); font: .65rem "Trebuchet MS", sans-serif; padding-top: .08rem; }
+.invitation-section { padding: 7rem 1.25rem 8rem; text-align: center; background: var(--wine); color: #fff7ed; position: relative; overflow: hidden; }
+.invitation-section::before { content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(255, 225, 193, .25); pointer-events: none; }
+.invitation-section .section-kicker { color: #e7b95c; }
+.invitation-section h2 { max-width: 62rem; margin: 1.2rem auto; font-size: clamp(2rem, 6vw, 4.1rem); position: relative; }
+.invitation-section h2 em { color: #f3c6b8; display: block; }
+.invitation-section > p { max-width: 31rem; margin: 0 auto 2rem; color: #f5deda; line-height: 1.7; font-size: .95rem; }
+.answer-buttons { display: flex; justify-content: center; align-items: center; gap: .8rem; min-height: 6.5rem; position: relative; }
+.yes-button { background: #f5c65d; color: var(--wine); font-weight: bold; }
+.no-button { border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: .85rem 1.2rem; background: transparent; color: #fff; }
+.no-button.is-running-away { position: absolute; z-index: 20; transition: left .2s ease, top .2s ease; }
+.reservation { max-width: 25rem; margin: 2rem auto 0; padding: 2rem; background: #fff7ed; color: var(--wine); border-radius: 1.5rem; box-shadow: 0 1rem 3rem rgba(46, 13, 23, .25); }
+.reservation[hidden] { display: none; }
+.reservation.is-confirmed { animation: appear .6s ease both; }
+.reservation-icon { font-size: 2rem; color: var(--rose); }
+.reservation-label { margin: .7rem 0 .3rem !important; color: var(--gold) !important; text-transform: uppercase; letter-spacing: .15em; font-size: .65rem !important; }
+.reservation h3 { margin: 0 0 .7rem; font: 1.8rem Georgia, serif; }
+.reservation p { color: #754951 !important; line-height: 1.5 !important; }
+.reservation-sign { display: block; margin-top: 1.2rem; font: italic 1rem Georgia, serif; }
+.music-toggle { position: fixed; right: 1rem; bottom: 1rem; z-index: 10; width: 2.7rem; height: 2.7rem; border: 1px solid rgba(142,62,80,.3); border-radius: 50%; background: rgba(255,250,243,.88); color: var(--wine); box-shadow: 0 .3rem 1rem rgba(80, 30, 35, .13); }
+.music-toggle.is-playing { animation: music-pulse 2s ease-in-out infinite; }
+.romance-footer { padding: 1.5rem; text-align: center; background: #411c2a; color: #eec9bc; font: italic .8rem Georgia, serif; }
+@keyframes pulse { 50% { transform: scale(1.2); } }
+@keyframes float { 50% { transform: translateY(-.35rem); } }
+@keyframes appear { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+@keyframes music-pulse { 50% { box-shadow: 0 0 0 .45rem rgba(200, 107, 120, .15); } }
+@media (min-width: 700px) {
+	.photo-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+	.photo-card-2, .photo-card-7, .photo-card-10 { margin-top: 2rem; }
+	.section-shell { padding-left: 2rem; padding-right: 2rem; }
+}

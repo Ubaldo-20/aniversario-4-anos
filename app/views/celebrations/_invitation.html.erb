@@ -1,0 +1,17 @@
+<section class="invitation-section reveal-section" data-controller="invitation escape">
+  <div class="invitation-sparkle" aria-hidden="true">&#10022;</div>
+  <div class="section-kicker">La pregunta importante</div>
+  <h2>¿Aceptas salir a cenar conmigo este <em>Sábado 3 de Octubre de 2026</em> para celebrar nuestros 4 años, mi Piruriru?</h2>
+  <p>Prometo una noche deliciosa, muchas risas y celebrar que todavía elegimos compartirlo todo.</p>
+  <div class="answer-buttons">
+    <button class="yes-button" type="button" data-action="invitation#accept">¡Sí, acepto! <span aria-hidden="true">&#10084;</span></button>
+    <button class="no-button" type="button" data-escape-target="button" data-action="mouseenter->escape#move touchstart->escape#move">No <span aria-hidden="true">&#128527;</span></button>
+  </div>
+  <div class="reservation" data-invitation-target="reservation" hidden>
+    <span class="reservation-icon" aria-hidden="true">&#10084;</span>
+    <p class="reservation-label">Reserva confirmada</p>
+    <h3>Cita romántica para dos</h3>
+    <p>Sábado 3 de octubre de 2026<br>Con mi persona favorita del mundo</p>
+    <span class="reservation-sign">Te amo, mi Mocito.</span>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<% content_for :title, "Para mi Piruriru | 4 años" %>
+
+<div class="romance-page" data-controller="unlock music">
+  <%= render "welcome" %>
+
+  <div class="romance-content" data-unlock-target="content" data-music-target="content">
+    <%= render "love_letter" %>
+    <%= render "counter" %>
+    <%= render "gallery", photos: @photos %>
+    <%= render "invitation" %>
+    <footer class="romance-footer">Hecho con todo mi amor para mi Mocito <span aria-hidden="true">&#9829;</span></footer>
+  </div>
+
+  <audio data-music-target="audio" loop preload="metadata">
+    <source src="/music/Perfect%20(Instrumental)%20-%20Ed%20Sheeran%20-%20Instrumental%20Channel.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-toggle" type="button" data-music-target="toggle" data-action="music#toggle" aria-label="Reproducir o pausar música">
+    <span data-music-target="icon" aria-hidden="true">&#9835;</span>
+  </button>
+</div>
