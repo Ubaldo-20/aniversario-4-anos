@@ -110,11 +110,18 @@ button { font: inherit; cursor: pointer; }
 	@page { size: A4; margin: 16mm; }
 	html, body { min-height: 0; background: #fff; }
 	.romance-page, .romance-content { min-height: 0; overflow: visible; background: #fff; opacity: 1; }
-	.welcome-screen, .letter-section, .counter-section, .gallery-section, .romance-footer, .music-toggle, .invitation-sparkle, .answer-buttons, .pdf-button, .reservation { display: none !important; }
-	.invitation-section { display: block; max-width: 170mm; margin: 12mm auto; padding: 24mm 14mm; border: 1px solid var(--gold); background: #fff8e9 !important; color: var(--ink) !important; print-color-adjust: exact; break-inside: avoid; }
-	.invitation-section::before { inset: 5mm; border-color: rgba(198, 148, 72, .45); }
-	.invitation-section .section-kicker { color: var(--gold); }
-	.invitation-section h2 { font-size: 30pt; line-height: 1.15; }
-	.invitation-section h2 em { color: var(--wine); }
-	.invitation-section > p { color: #69454a; font-size: 12pt; }
+	.welcome-screen, .music-toggle, .invitation-sparkle, .answer-buttons, .pdf-button { display: none !important; }
+	.section-shell { max-width: none; padding: 12mm 0; }
+	.love-letter { max-width: none; box-shadow: none; transform: none; break-inside: avoid; }
+	.counter-section { max-width: none; print-color-adjust: exact; break-inside: avoid; }
+	.countdown { gap: 8mm; }
+	.photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm; }
+	.photo-card, .photo-card:nth-child(even) { margin: 0; box-shadow: none; transform: none; break-inside: avoid; }
+	.photo-card img { print-color-adjust: exact; }
+	.invitation-section { display: block; max-width: none; margin: 8mm 0; padding: 18mm 12mm; overflow: visible; background: var(--wine) !important; color: #fff7ed !important; print-color-adjust: exact; break-inside: avoid; }
+	.invitation-section::before { inset: 5mm; border-color: rgba(255, 225, 193, .45); }
+	.invitation-section h2 { font-size: 26pt; line-height: 1.15; }
+	.invitation-section h2 em { color: #f3c6b8; }
+	.invitation-section > p { color: #f5deda; font-size: 12pt; }
+	.romance-footer { print-color-adjust: exact; }
 }
