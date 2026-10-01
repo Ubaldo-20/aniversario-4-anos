@@ -83,6 +83,8 @@ button { font: inherit; cursor: pointer; }
 .yes-button { background: #f5c65d; color: var(--wine); font-weight: bold; }
 .no-button { border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: .85rem 1.2rem; background: transparent; color: #fff; }
 .no-button.is-running-away { position: absolute; z-index: 20; transition: left .2s ease, top .2s ease; }
+.pdf-button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; max-width: 100%; margin-top: 1.2rem; padding: .75rem 1rem; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; background: transparent; color: #fff7ed; font-size: .88rem; transition: background .2s, color .2s; }
+.pdf-button:hover { background: #fff7ed; color: var(--wine); }
 .reservation { max-width: 25rem; margin: 2rem auto 0; padding: 2rem; background: #fff7ed; color: var(--wine); border-radius: 1.5rem; box-shadow: 0 1rem 3rem rgba(46, 13, 23, .25); }
 .reservation[hidden] { display: none; }
 .reservation.is-confirmed { animation: appear .6s ease both; }
@@ -102,4 +104,17 @@ button { font: inherit; cursor: pointer; }
 	.photo-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
 	.photo-card-2, .photo-card-7, .photo-card-10 { margin-top: 2rem; }
 	.section-shell { padding-left: 2rem; padding-right: 2rem; }
+}
+
+@media print {
+	@page { size: A4; margin: 16mm; }
+	html, body { min-height: 0; background: #fff; }
+	.romance-page, .romance-content { min-height: 0; overflow: visible; background: #fff; opacity: 1; }
+	.welcome-screen, .letter-section, .counter-section, .gallery-section, .romance-footer, .music-toggle, .invitation-sparkle, .answer-buttons, .pdf-button, .reservation { display: none !important; }
+	.invitation-section { display: block; max-width: 170mm; margin: 12mm auto; padding: 24mm 14mm; border: 1px solid var(--gold); background: #fff8e9 !important; color: var(--ink) !important; print-color-adjust: exact; break-inside: avoid; }
+	.invitation-section::before { inset: 5mm; border-color: rgba(198, 148, 72, .45); }
+	.invitation-section .section-kicker { color: var(--gold); }
+	.invitation-section h2 { font-size: 30pt; line-height: 1.15; }
+	.invitation-section h2 em { color: var(--wine); }
+	.invitation-section > p { color: #69454a; font-size: 12pt; }
 }

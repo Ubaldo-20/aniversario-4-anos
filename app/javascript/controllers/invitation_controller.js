@@ -15,4 +15,8 @@ export default class extends Controller {
       colors: ["#b94b5f", "#e9b44c", "#f9e2d7", "#7d3047"]
     })
   }
+
+  downloadPdf() {
+    window.print()
+  }
 }
